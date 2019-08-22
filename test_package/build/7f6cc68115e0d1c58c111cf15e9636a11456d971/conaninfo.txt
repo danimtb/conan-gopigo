@@ -1,0 +1,33 @@
+[settings]
+    arch=x86_64
+    build_type=Release
+    compiler=gcc
+    compiler.libcxx=libstdc++
+    compiler.version=8
+    os=Linux
+
+[requires]
+    gopigo/2.Y.Z
+
+[options]
+
+
+[full_settings]
+    arch=x86_64
+    build_type=Release
+    compiler=gcc
+    compiler.libcxx=libstdc++
+    compiler.version=8
+    os=Linux
+
+[full_requires]
+    gopigo/2.4.1:2d5685a99e2ff5a0d2b054bb1fbfa46781f8a46a
+
+[full_options]
+
+
+[recipe_hash]
+
+
+[env]
+

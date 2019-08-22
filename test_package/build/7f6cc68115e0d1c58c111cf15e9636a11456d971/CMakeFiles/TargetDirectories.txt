@@ -1,0 +1,3 @@
+/home/barbarian/conan-gopigo/test_package/build/7f6cc68115e0d1c58c111cf15e9636a11456d971/CMakeFiles/rebuild_cache.dir
+/home/barbarian/conan-gopigo/test_package/build/7f6cc68115e0d1c58c111cf15e9636a11456d971/CMakeFiles/basic_test_all.dir
+/home/barbarian/conan-gopigo/test_package/build/7f6cc68115e0d1c58c111cf15e9636a11456d971/CMakeFiles/edit_cache.dir

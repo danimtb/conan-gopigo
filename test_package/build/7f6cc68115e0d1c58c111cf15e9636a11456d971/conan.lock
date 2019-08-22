@@ -1,0 +1,19 @@
+{
+ "profile": "[settings]\narch=x86_64\narch_build=x86_64\nbuild_type=Release\ncompiler=gcc\ncompiler.libcxx=libstdc++\ncompiler.version=8\nos=Linux\nos_build=Linux\n[options]\n[build_requires]\n[env]\n", 
+ "graph_lock": {
+  "nodes": {
+   "2ebdef19-c4f4-11e9-a078-4851b7e1c120": {
+    "pref": "None/None@None/None:79cafe050e8cd4d6c0e1c9ff3fbeec30ae6c592b", 
+    "requires": {
+     "gopigo/2.4.1@None/None#299458e7851bf02427918dbfd47baec0": "2ebdef18-c4f4-11e9-a078-4851b7e1c120"
+    }, 
+    "options": ""
+   }, 
+   "2ebdef18-c4f4-11e9-a078-4851b7e1c120": {
+    "pref": "gopigo/2.4.1@None/None#299458e7851bf02427918dbfd47baec0:2d5685a99e2ff5a0d2b054bb1fbfa46781f8a46a#6c982c31f12026434a35818d01d9e78c", 
+    "options": ""
+   }
+  }
+ }, 
+ "version": "0.1"
+}

@@ -1,0 +1,1 @@
+/usr/bin/cc   -m64 -O3 -DNDEBUG        -rdynamic CMakeFiles/basic_test_all.dir/basic_test_all.c.o  -o bin/basic_test_all  -L/home/barbarian/.conan/data/gopigo/2.4.1/_/_/package/2d5685a99e2ff5a0d2b054bb1fbfa46781f8a46a/lib -Wl,-rpath,/home/barbarian/.conan/data/gopigo/2.4.1/_/_/package/2d5685a99e2ff5a0d2b054bb1fbfa46781f8a46a/lib -lgopigo 
