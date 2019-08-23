@@ -30,7 +30,8 @@ if __name__ == "__main__":
         login_username=login_username,
         reference=reference,
 #        upload=upload_remote,
-#        remotes=upload_remote)
+#        remotes=upload_remote
+        )
 
     builder.add_common_builds()
     builder.run()
