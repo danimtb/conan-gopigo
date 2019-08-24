@@ -14,6 +14,7 @@ class GoPiGo(ConanFile):
 
     def test(self):
         if platform.system () != self.settings.os:
+            print("checking the existence of binary")
             assert os.path.exists("bin/basic_test_all")
         else:
             os.chdir("bin")
