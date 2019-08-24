@@ -34,11 +34,11 @@ if __name__ == "__main__":
         )
     
     builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++11", 
-                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+                          "compiler.version": "6"}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++11", 
-                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+                          "compiler.version": "6"}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++", 
-                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+                          "compiler.version": "6"}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++",
-                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+                          "compiler.version": "6"}, options={}, env_vars={}, build_requires={})
     builder.run()
