@@ -1,4 +1,5 @@
 import os
+import platform
 from conans import ConanFile, tools, CMake
 
 
@@ -12,5 +13,8 @@ class GoPiGo(ConanFile):
         cmake.build()
 
     def test(self):
-        os.chdir("bin")
-        self.run(".%sbasic_test_all" % os.sep)
+        if platform.system () != self.settings.os:
+            assert os.path.exists("bin/basic_test_all")
+        else:
+            os.chdir("bin")
+            self.run(".%sbasic_test_all" % os.sep)
