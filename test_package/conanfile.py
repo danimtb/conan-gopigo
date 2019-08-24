@@ -13,7 +13,8 @@ class GoPiGo(ConanFile):
         cmake.build()
 
     def test(self):
-        if platform.system () != self.settings.os:
+        # handle this better in the future
+        if "arm" in self.settings.arch and "arm" not in platform.machine():
             print("checking the existence of binary")
             assert os.path.exists("bin/basic_test_all")
         else:
