@@ -29,6 +29,8 @@ if __name__ == "__main__":
         username=username,
         login_username=login_username,
         reference=reference,
+        archs=["armv7hf"],
+        gcc_versions=["8"]
 #        upload=upload_remote,
 #        remotes=upload_remote
         )
