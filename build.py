@@ -29,11 +29,16 @@ if __name__ == "__main__":
         channel=conan_channel,
         login_username=login_username,
         reference=reference,
-        archs=["armv7hf"],
-        gcc_versions=["8"],
         upload=upload_remote,
         remotes=upload_remote
         )
-
-    builder.add_common_builds()
+    
+    builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++11", 
+                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+    builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++11", 
+                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+    builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++", 
+                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
+    builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++",
+                          "compiler.version": "8"}, options={}, env_vars={}, build_requires={})
     builder.run()
