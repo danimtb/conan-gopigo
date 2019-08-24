@@ -19,7 +19,7 @@ if __name__ == "__main__":
     name = get_name_from_recipe()
     version = get_version_from_recipe()
     reference = "{0}/{1}".format(name, version)
-    conan_username = "czoido"
+    conan_username = "conan"
     conan_channel = "stable"
     login_username = "czoido"
     upload_remote = "https://api.bintray.com/conan/czoido/conan-packages"
