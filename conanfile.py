@@ -35,3 +35,6 @@ class GoPiGo(ConanFile):
 
     def package_info(self):
         self.cpp_info.libs = ["gopigo"]
+
+    def package_id(self):
+        del self.info.settings.arch_build
