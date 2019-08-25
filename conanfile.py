@@ -34,7 +34,7 @@ class GoPiGo(ConanFile):
         self.copy("*.a", dst="lib", keep_path=False)
 
     def package_info(self):
-        self.cpp_info.libs = ["gopigo"]
+        self.cpp_info.libs = ["gopigo3"]
 
     def package_id(self):
         del self.info.settings.arch_build

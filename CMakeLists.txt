@@ -4,4 +4,4 @@ project(gopigo VERSION 2.4.1)
 include(${CMAKE_BINARY_DIR}/conanbuildinfo.cmake)
 conan_basic_setup()
 
-add_library(gopigo gopigo.c)
+add_library(gopigo3 GoPiGo3.cpp)
