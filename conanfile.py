@@ -8,6 +8,9 @@ class GoPiGo(ConanFile):
     name = "gopigo"
     version = "2.4.2"
     settings = "os", "compiler", "build_type", "arch"
+    options = {"shared": [True, False],
+               "fPIC": [True, False]}
+    default_options = "shared=True", "fPIC=True"
     generators = "cmake"
     exports_sources = "CMakeLists.txt"
 
