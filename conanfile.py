@@ -16,7 +16,7 @@ class GoPiGo(ConanFile):
             raise ConanInvalidConfiguration("This library is only supported in Linux systems")
 
     def source(self):
-        filename = "DexterOS_%s" % self.version
+        filename = "dexteros_%s" % self.version
         tools.get("https://github.com/DexterInd/GoPiGo3/archive/%s.zip" % filename)
         os.rename("GoPiGo-%s" % filename, "sources")
         cmakelists_path = os.path.join(self.source_folder, "sources", "Software", "C", "CMakeLists.txt")
