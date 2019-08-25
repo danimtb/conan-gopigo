@@ -35,11 +35,11 @@ if __name__ == "__main__":
     
     compiler_version = os.environ.get('CONAN_GCC_VERSIONS')
     builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++11", 
-                          "compiler.version": compiler_version}, options={"shared": True}, env_vars={}, build_requires={})
+                          "compiler.version": compiler_version}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++11", 
-                          "compiler.version": compiler_version}, options={"shared": True}, env_vars={}, build_requires={})
+                          "compiler.version": compiler_version}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Debug", "compiler.libcxx": "libstdc++", 
-                          "compiler.version": compiler_version}, options={"shared": True}, env_vars={}, build_requires={})
+                          "compiler.version": compiler_version}, options={}, env_vars={}, build_requires={})
     builder.add(settings={"arch": "armv7hf", "build_type": "Release", "compiler.libcxx": "libstdc++",
-                          "compiler.version": compiler_version}, options={"shared": True}, env_vars={}, build_requires={})
+                          "compiler.version": compiler_version}, options={}, env_vars={}, build_requires={})
     builder.run()
