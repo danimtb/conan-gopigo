@@ -6,7 +6,8 @@ from conans import ConanFile, tools, CMake
 class GoPiGo(ConanFile):
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
-
+    default_options = "gopigo:shared=True"
+    
     def build(self):
         cmake = CMake(self)
         cmake.configure()
