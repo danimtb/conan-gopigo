@@ -10,6 +10,9 @@ matrix:
    include: 
       - <<: *linux
         env: CONAN_GCC_VERSIONS=6 CONAN_DOCKER_IMAGE=conanio/gcc6-armv7hf
+   include: 
+      - <<: *linux
+        env: CONAN_GCC_VERSIONS=8 CONAN_DOCKER_IMAGE=conanio/gcc8-armv7hf
 
 install:
   - chmod +x .travis/install.sh
