@@ -18,7 +18,7 @@ class GoPiGo(ConanFile):
     def source(self):
         filename = "dexteros_%s" % self.version
         tools.get("https://github.com/DexterInd/GoPiGo3/archive/%s.zip" % filename)
-        os.rename("GoPiGo-%s" % filename, "sources")
+        os.rename("GoPiGo3-%s" % filename, "sources")
         cmakelists_path = os.path.join(self.source_folder, "sources", "Software", "C", "CMakeLists.txt")
         os.unlink(cmakelists_path)
         shutil.copy2(os.path.join(self.source_folder, "CMakeLists.txt"), cmakelists_path)
