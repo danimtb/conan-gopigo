@@ -20,6 +20,7 @@ class GoPiGo(ConanFile):
         tools.get("https://github.com/DexterInd/GoPiGo3/archive/%s.zip" % filename)
         os.rename("GoPiGo3-%s" % filename, "sources")
         cmakelists_path = os.path.join(self.source_folder, "sources", "Software", "C", "CMakeLists.txt")
+        print(cmakelists_path)
         os.unlink(cmakelists_path)
         shutil.copy2(os.path.join(self.source_folder, "CMakeLists.txt"), cmakelists_path)
 
@@ -29,7 +30,7 @@ class GoPiGo(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("GoPiGo3.h", dst="include", keep_path=False)
+        self.copy("*.h", dst="include", keep_path=False)
         self.copy("*.so*", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
