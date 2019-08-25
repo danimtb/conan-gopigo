@@ -6,7 +6,7 @@ from conans.errors import ConanInvalidConfiguration
 
 class GoPiGo(ConanFile):
     name = "gopigo"
-    version = "2.4.1"
+    version = "2.4.2"
     settings = "os", "compiler", "build_type", "arch"
     generators = "cmake"
     exports_sources = "CMakeLists.txt"
@@ -17,7 +17,7 @@ class GoPiGo(ConanFile):
 
     def source(self):
         filename = "DexterOS_%s" % self.version
-        tools.get("https://github.com/DexterInd/GoPiGo/archive/%s.zip" % filename)
+        tools.get("https://github.com/DexterInd/GoPiGo3/archive/%s.zip" % filename)
         os.rename("GoPiGo-%s" % filename, "sources")
         cmakelists_path = os.path.join(self.source_folder, "sources", "Software", "C", "CMakeLists.txt")
         os.unlink(cmakelists_path)
@@ -29,7 +29,7 @@ class GoPiGo(ConanFile):
         cmake.build()
 
     def package(self):
-        self.copy("*gopigo.h", dst="include", keep_path=False)
+        self.copy("GoPiGo3.h", dst="include", keep_path=False)
         self.copy("*.so*", dst="lib", keep_path=False)
         self.copy("*.a", dst="lib", keep_path=False)
 
