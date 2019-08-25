@@ -1,4 +1,4 @@
-#include "gopigo.h"
+#include "GoPiGo3.h"
 
 
 int main(void)
