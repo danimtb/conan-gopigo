@@ -14,7 +14,7 @@ pipelines:
           affinityGroup: dockerGroup
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: art-yalla.jfrog-lab.com/docker-local/gopigo
+          dockerImageName: art-yalla.jfrog-lab.com:443/yalla-gopigo
           dockerImageTag: $run_number
           inputResources:
             - name: conan_gopigo_github
@@ -24,7 +24,7 @@ pipelines:
         type: DockerPush
         configuration:
           affinityGroup: dockerGroup
-          targetRepository: docker-local
+          targetRepository: docker
           integrations:
             - name: artifactory
           inputSteps:
