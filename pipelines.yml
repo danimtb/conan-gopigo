@@ -1,0 +1,33 @@
+resources:
+  - name: conan_gopigo_github
+    type: GitRepo
+    configuration:
+      path: czoido/conan-gopigo
+      gitProvider: czoido_github
+
+pipelines:
+  - name: demo_pipeline
+    steps:
+      - name: build_library
+        type: DockerBuild
+        configuration:
+          dockerFileLocation: .
+          dockerFileName: Dockerfile
+          dockerImageName: conan_build_image
+          dockerImageTag: $run_number
+          inputResources:
+            - name: conan_gopigo_github
+          integrations:
+            - name: czoido_docker
+
+      - name: second_step_demo
+        type: Bash
+        configuration:
+          inputSteps:
+            - name: first_step_demo
+        execution:
+          onExecute:
+            - ls -l
+            - printenv
+            - echo $res_robotapp_github_commitSha          
+
