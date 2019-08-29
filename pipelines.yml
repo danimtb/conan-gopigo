@@ -18,9 +18,7 @@ pipelines:
           inputResources:
             - name: conan_gopigo_github
           integrations:
-            - name: czoido_docker
             - name: artifactory
-
       - name: push_docker_image
         type: PushArtifactoryPackage
         configuration:
@@ -29,7 +27,6 @@ pipelines:
             - name: artifactory
           inputSteps:
             - name: build_docker_image
-
       - name: build_gopigo_package
         type: Bash
         configuration:
@@ -47,7 +44,6 @@ pipelines:
           onExecute:
             - ls -l
             - python build.py
-
       - name: print_information
         type: Bash
         configuration:
