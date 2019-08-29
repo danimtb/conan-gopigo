@@ -15,7 +15,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: conanio/gcc6-armv7hf
+                name: conanio/gcc8-armv7hf
                 tag: latest
           integrations:
             - name: czoido_docker
