@@ -33,6 +33,8 @@ pipelines:
           dockerFileName: Dockerfile
           dockerImageName: art-yalla.jfrog-lab.com/docker-local/gopigo
           dockerImageTag: $run_number
+          inputResources:
+            - name: conan_gopigo_github
           inputSteps:
             - name: build_gopigo_package_docker_reg          
           integrations:
