@@ -19,6 +19,7 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
+            - name: artifactory
 
       - name: push_docker_image
         type: PushArtifactoryPackage
