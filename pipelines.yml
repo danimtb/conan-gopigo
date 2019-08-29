@@ -8,23 +8,41 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
-      - name: build_library
+      - name: build_docker_image
         type: DockerBuild
         configuration:
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: conan_build_image
+          dockerImageName: conan_gopigo
           dockerImageTag: $run_number
           inputResources:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
-
+      - name: build_gopigo_package
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: conan_gopigo
+                tag: $run_number
+          inputSteps:
+            - name: build_docker_image
+          inputResources:
+            - name: conan_gopigo_github
+          integrations:
+            - name: czoido_docker
+        execution:
+          onExecute:
+            - ls -l
+            - python build.py
       - name: print_information
         type: Bash
         configuration:
           inputSteps:
-            - name: build_library
+            - name: build_gopigo_package
         execution:
           onExecute:
             - ls -l
