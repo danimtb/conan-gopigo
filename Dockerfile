@@ -1,5 +1,6 @@
 FROM conanio/gcc6-armv7hf
 
+RUN ls -l
 RUN pip install conan --upgrade
 RUN pip install conan_package_tools
 RUN conan user
