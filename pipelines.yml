@@ -41,7 +41,7 @@ pipelines:
           inputSteps:
             - name: push_docker_image
           integrations:
-            - name: czoido_docker
+            - name: artifactory
         execution:
           onExecute:
             - ls -l
