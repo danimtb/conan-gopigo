@@ -8,6 +8,23 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
+      - name: build_gopigo_package
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: conanio/gcc6-armv7hf
+                tag: latest
+          inputResources:
+            - name: conan_gopigo_github
+          integrations:
+            - name: czoido_docker
+        execution:
+          onExecute:
+            - ls -l
+            - python build.py
       - name: build_docker_image
         type: DockerBuild
         configuration:
