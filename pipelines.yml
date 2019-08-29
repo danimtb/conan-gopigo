@@ -20,13 +20,22 @@ pipelines:
           integrations:
             - name: artifactory
       - name: push_docker_image
-        type: PushArtifactoryPackage
+        type: DockerPush
         configuration:
-          targetRepo: docker-local
+          targetRepository: docker-local
           integrations:
             - name: artifactory
           inputSteps:
             - name: build_docker_image
+        execution:
+          onStart:
+            - echo "Preparing for work..."
+          onSuccess:
+            - echo "Job well done!"
+          onFailure:
+            - echo "uh oh, something went wrong"
+          onComplete:
+            - echo "Cleaning up some stuff"
       - name: build_gopigo_package
         type: Bash
         configuration:
