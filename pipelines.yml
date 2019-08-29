@@ -8,37 +8,22 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
-      - name: build_gopigo_package_docker_reg
-        type: Bash
-        configuration:
-          runtime:
-            type: image
-            image:
-              custom:
-                name: conanio/gcc8-armv7hf
-                tag: latest
-          integrations:
-            - name: czoido_docker
-        execution:
-          onExecute:
-            - ls -l
-            - python build.py
       - name: build_docker_image
         type: DockerBuild
         configuration:
+          affinityGroup: dockerGroup
           dockerFileLocation: .
           dockerFileName: Dockerfile
           dockerImageName: art-yalla.jfrog-lab.com/docker-local/gopigo
           dockerImageTag: $run_number
           inputResources:
             - name: conan_gopigo_github
-          inputSteps:
-            - name: build_gopigo_package_docker_reg          
           integrations:
             - name: artifactory
       - name: push_docker_image
         type: DockerPush
         configuration:
+          affinityGroup: dockerGroup
           targetRepository: docker-local
           integrations:
             - name: artifactory
