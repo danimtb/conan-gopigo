@@ -19,6 +19,16 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
+
+      - name: push_docker_image
+        type: PushArtifactoryPackage
+        configuration:
+          targetRepo: docker-local
+          integrations:
+            - name: artifactory
+          inputSteps:
+            - name: build_docker_image
+
       - name: build_gopigo_package
         type: Bash
         configuration:
@@ -29,13 +39,14 @@ pipelines:
                 name: conan_gopigo
                 tag: $run_number
           inputSteps:
-            - name: build_docker_image
+            - name: push_docker_image
           integrations:
             - name: czoido_docker
         execution:
           onExecute:
             - ls -l
             - python build.py
+
       - name: print_information
         type: Bash
         configuration:
