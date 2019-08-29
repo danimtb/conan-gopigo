@@ -21,7 +21,6 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
-            - name: czoido_github
         execution:
           onExecute:
             - ls -l
