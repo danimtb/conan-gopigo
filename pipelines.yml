@@ -6,7 +6,7 @@ resources:
       gitProvider: czoido_github
 
 pipelines:
-  - name: demo_pipeline
+  - name: conan_gopigo_pipeline
     steps:
       - name: build_library
         type: DockerBuild
