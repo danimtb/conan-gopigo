@@ -13,7 +13,7 @@ pipelines:
         configuration:
           dockerFileLocation: .
           dockerFileName: Dockerfile
-          dockerImageName: conan_gopigo
+          dockerImageName: art-yalla.jfrog-lab.com//docker-local/gopigo
           dockerImageTag: $run_number
           inputResources:
             - name: conan_gopigo_github
