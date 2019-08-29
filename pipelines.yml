@@ -8,7 +8,7 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
-      - name: build_gopigo_package
+      - name: test_step
         type: Bash
         configuration:
           runtime:
