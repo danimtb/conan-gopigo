@@ -30,8 +30,6 @@ pipelines:
                 tag: $run_number
           inputSteps:
             - name: build_docker_image
-          inputResources:
-            - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
         execution:
