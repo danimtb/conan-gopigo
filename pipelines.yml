@@ -20,7 +20,7 @@ pipelines:
           integrations:
             - name: czoido_docker
 
-      - name: second_step_demo
+      - name: print_information
         type: Bash
         configuration:
           inputSteps:
@@ -29,5 +29,5 @@ pipelines:
           onExecute:
             - ls -l
             - printenv
-            - echo $res_robotapp_github_commitSha          
+            - echo $res_conan_gopigo_github_commitSha          
 
