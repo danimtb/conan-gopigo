@@ -23,6 +23,6 @@ pipelines:
             - name: czoido_docker
         execution:
           onExecute:
-            - tree /jfrog/pipelines/conan_gopigo/runs/
-            - pwd   
-            - python ./conan-gopigo/build.py
+            - git clone https://github.com/czoido/conan-gopigo.git
+            - cd conan-gopigo    
+            - python build.py
