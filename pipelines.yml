@@ -17,8 +17,6 @@ pipelines:
               custom:
                 name: conanio/gcc6-armv7hf
                 tag: latest
-          inputResources:
-            - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
         execution:
