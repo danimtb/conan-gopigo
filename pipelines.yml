@@ -26,7 +26,8 @@ pipelines:
           onExecute:
             - pip install conan --upgrade
             - pip install conan_package_tools
-            - conan user
+            - conan remote add yalla https://art-yalla.jfrog-lab.com/artifactory/api/conan/conan-repo
+            - conan user carlos -p -r=yalla
             - git clone https://github.com/czoido/conan-gopigo.git
             - cd conan-gopigo
             - conan profile new default --detect
