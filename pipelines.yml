@@ -8,21 +8,6 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
-      - name: test_step
-        type: Bash
-        configuration:
-          runtime:
-            type: image
-            image:
-              custom:
-                name: conanio/gcc6-armv7hf
-                tag: latest
-          integrations:
-            - name: czoido_docker
-        execution:
-          onExecute:
-            - ls -l
-            - python build.py
       - name: build_docker_image
         type: DockerBuild
         configuration:
@@ -35,49 +20,21 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: artifactory
-      - name: push_docker_image
-        type: DockerPush
-        configuration:
-          affinityGroup: dockerGroup
-          targetRepository: docker
-          integrations:
-            - name: artifactory
-          inputSteps:
-            - name: build_docker_image
-        execution:
-          onStart:
-            - echo "Preparing for work..."
-          onSuccess:
-            - echo "Job well done!"
-          onFailure:
-            - echo "uh oh, something went wrong"
-          onComplete:
-            - echo "Cleaning up some stuff"
-      - name: build_gopigo_package
+      - name: test_step
         type: Bash
         configuration:
           runtime:
             type: image
             image:
               custom:
-                name: art-yalla.jfrog-lab.com/docker-local/gopigo
-                tag: $run_number
-          inputSteps:
-            - name: push_docker_image
+                name: conanio/gcc6-armv7hf
+                tag: latest
           integrations:
-            - name: artifactory
+            - name: czoido_docker
+          inputSteps:
+            - name: build_docker_image
         execution:
           onExecute:
             - ls -l
             - python build.py
-      - name: print_information
-        type: Bash
-        configuration:
-          inputSteps:
-            - name: build_gopigo_package
-        execution:
-          onExecute:
-            - ls -l
-            - printenv
-            - echo $res_conan_gopigo_github_commitSha          
 
