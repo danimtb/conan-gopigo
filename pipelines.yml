@@ -27,7 +27,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: golang
+                name: ubuntu
                 tag: latest
           integrations:
             - name: czoido_docker
