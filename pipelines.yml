@@ -21,7 +21,7 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
-            - name: enviroment
+            - name: environment
         execution:
           onExecute:
             - pip install conan --upgrade
