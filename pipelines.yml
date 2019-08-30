@@ -38,6 +38,7 @@ pipelines:
             - name: build_docker_image
         execution:
           onExecute:
+            - apt-get update && apt-get install -y git
             - ls -l
             - python build.py
 
