@@ -27,8 +27,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: rushmash/gcc-arm-embedded-docker
-
+                name: ubuntu
                 tag: latest
                 options: "-e HOME=/root"
           inputResources:
