@@ -29,6 +29,7 @@ pipelines:
               custom:
                 name: ubuntu
                 tag: latest
+                options: "-e HOME=/root"
           integrations:
             - name: czoido_docker
           inputSteps:
@@ -36,5 +37,4 @@ pipelines:
         execution:
           onExecute:
             - ls -l
-            - python build.py
 
