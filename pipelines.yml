@@ -39,4 +39,5 @@ pipelines:
         execution:
           onExecute:
             - ls -l
+            - python build.py
 
