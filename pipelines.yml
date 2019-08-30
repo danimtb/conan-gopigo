@@ -27,7 +27,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: conanio/gcc8
+                name: czoido/testimage
                 tag: latest
                 options: "-e HOME=/root"
           inputResources:
@@ -39,7 +39,6 @@ pipelines:
         execution:
           onStart:
             - echo "Preparing for work..."
-            - apt-get update && apt-get install -y git
             - ls -l
           onExecute:
             - echo "executing task command 1"
