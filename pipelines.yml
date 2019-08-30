@@ -8,7 +8,7 @@ resources:
 pipelines:
   - name: conan_gopigo
     steps:
-      - name: build_library
+      - name: build_library_gcc8
         type: Bash
         configuration:
           runtime:
@@ -26,7 +26,35 @@ pipelines:
           onExecute:
             - export CONAN_LOGIN_USERNAME=$int_environment_CONAN_LOGIN_USERNAME
             - export CONAN_PASSWORD=$int_environment_CONAN_PASSWORD
-            - printenv
+            - pip install conan --upgrade
+            - pip install conan_package_tools
+            - conan user
+            - git clone https://github.com/czoido/conan-gopigo.git
+            - cd conan-gopigo
+            - conan profile new default --detect
+            - conan profile show default
+            - conan profile update settings.compiler.libcxx=libstdc++11 default
+            - conan profile update settings.compiler.version=8 default
+            - export CONAN_GCC_VERSIONS=8
+            - python build.py
+      - name: build_library_gcc6
+        type: Bash
+        configuration:
+          runtime:
+            type: image
+            image:
+              custom:
+                name: czoido/pipelines-conanio-gcc6-armv7hf
+                tag: latest
+          inputResources:
+            - name: conan_gopigo_github
+          integrations:
+            - name: czoido_docker
+            - name: environment
+        execution:
+          onExecute:
+            - export CONAN_LOGIN_USERNAME=$int_environment_CONAN_LOGIN_USERNAME
+            - export CONAN_PASSWORD=$int_environment_CONAN_PASSWORD
             - pip install conan --upgrade
             - pip install conan_package_tools
             - conan user
