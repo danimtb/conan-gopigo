@@ -28,7 +28,7 @@ pipelines:
             image:
               custom:
                 name: ubuntu
-                tag: latest
+                tag: bionic
                 options: "-e HOME=/root"
           inputResources:
             - name: conan_gopigo_github
