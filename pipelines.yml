@@ -21,6 +21,7 @@ pipelines:
             - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
+            - name: artifactory
         execution:
           onExecute:
             - pip install conan --upgrade
