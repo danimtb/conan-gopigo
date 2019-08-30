@@ -27,7 +27,7 @@ pipelines:
             type: image
             image:
               custom:
-                name: conanio/gcc6-armv7hf
+                name: golang
                 tag: latest
           integrations:
             - name: czoido_docker
