@@ -39,6 +39,7 @@ pipelines:
         execution:
           onStart:
             - echo "Preparing for work..."
+            - conan remote list
             - ls -l
           onExecute:
             - echo "executing task command 1"
