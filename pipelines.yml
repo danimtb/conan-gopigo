@@ -30,6 +30,8 @@ pipelines:
                 name: ubuntu
                 tag: latest
                 options: "-e HOME=/root"
+          inputResources:
+            - name: conan_gopigo_github
           integrations:
             - name: czoido_docker
           inputSteps:
