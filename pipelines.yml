@@ -23,6 +23,6 @@ pipelines:
             - name: czoido_docker
         execution:
           onExecute:
+            - tree /   
             - pwd   
-            - ls -l /   
-            - python build.py
+            - python ./conan-gopigo/build.py
