@@ -23,4 +23,6 @@ pipelines:
             - name: czoido_docker
         execution:
           onExecute:
+            - pwd   
+            - ls -l /   
             - python build.py
