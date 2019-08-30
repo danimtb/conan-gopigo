@@ -17,7 +17,6 @@ pipelines:
               custom:
                 name: czoido/pipelines-conanio-gcc8-armv7hf
                 tag: latest
-                options: "-e HOME=/root"
           inputResources:
             - name: conan_gopigo_github
           integrations:
