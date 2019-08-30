@@ -24,7 +24,8 @@ pipelines:
             - name: environment
         execution:
           onExecute:
-            - printenv
+            - export CONAN_LOGIN_USERNAME=int_environment_CONAN_LOGIN_USERNAME
+            - export CONAN_PASSWORD=int_environment_CONAN_PASSWORD
             - pip install conan --upgrade
             - pip install conan_package_tools
             - conan user
