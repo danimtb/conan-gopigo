@@ -23,6 +23,8 @@ pipelines:
             - name: czoido_docker
         execution:
           onExecute:
+            - pip install conan --upgrade
+            - pip install conan_package_tools
             - git clone https://github.com/czoido/conan-gopigo.git
             - cd conan-gopigo
             - conan user
