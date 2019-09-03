@@ -2,7 +2,7 @@ resources:
   - name: gopigo_github
     type: GitRepo
     configuration:
-      path: danimtb/gopigo
+      path: danimtb/conan-gopigo
       gitProvider: danimtb_github
 
 pipelines:
